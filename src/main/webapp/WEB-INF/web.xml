@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns="http://xmlns.jcp.org/xml/ns/javaee"
+	xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd"
+	id="WebApp_ID" version="4.0">
+	<display-name>myproject</display-name>
+	<welcome-file-list>
+		<welcome-file>index.html</welcome-file>
+		<welcome-file>index.jsp</welcome-file>
+		<welcome-file>Index.jsp</welcome-file>
+		<welcome-file>index.htm</welcome-file>
+		<welcome-file>default.html</welcome-file>
+		<welcome-file>default.jsp</welcome-file>
+		<welcome-file>default.htm</welcome-file>
+	</welcome-file-list>
+	<context-param>
+		<param-name>greeting</param-name>
+		<param-value>歡迎大駕光臨</param-value>
+	</context-param>
+	
+	<context-param>
+		<param-name>uploadDir</param-name>
+		<param-value>/uploadDir</param-value>
+	</context-param>
+	
+	<servlet>
+		<servlet-name>jsp02</servlet-name>
+		<jsp-file>/myjsp02.jsp</jsp-file>
+		<init-param>
+			<param-name>sayhello</param-name>
+			<param-value>您的光臨是我們的榮幸</param-value>
+		</init-param>
+	</servlet>
+	<servlet-mapping>
+	<servlet-name>jsp02</servlet-name>
+	<url-pattern>/myjsp02.jsp</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>jsp03</servlet-name>
+		<jsp-file>/myjsp03.jsp</jsp-file>
+		<init-param>
+			<param-name>greeting</param-name>
+			<param-value>您的光臨是我們的榮幸</param-value>
+		</init-param>
+	</servlet>
+	<servlet-mapping>
+	<servlet-name>jsp03</servlet-name>
+	<url-pattern>/myjsp03.jsp</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+	<servlet-name>s04</servlet-name>
+	<servlet-class>iii.MyServlet04</servlet-class>
+	<init-param>
+	<param-name>greeting</param-name>
+	<param-value>歡迎大駕光臨....</param-value>
+	</init-param>
+	</servlet>
+	
+	<servlet-mapping>
+	<servlet-name>s04</servlet-name>
+	<url-pattern>/MyServlet04</url-pattern>
+	</servlet-mapping>
+	
+	 <listener>
+        <listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
+    </listener>
+     
+     <context-param>
+         <param-name>contextConfigLocation</param-name>
+     	 <param-value>/WEB-INF/applicationContext.xml</param-value>
+     </context-param>
+	
+	
+	
+</web-app>
